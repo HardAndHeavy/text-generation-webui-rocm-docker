@@ -21,4 +21,3 @@ At the first start, a lengthy initialization process will take place. When the p
 ### Remarks          
 - To add new node resources, you must grant access to the directory `./data`, because the container was started as the root user. To do this, run the command `sudo chmod -R 777 ./data`
 - Models are located in the directory `./data/tg-webui/models/`. Models can be found on the site [huggingface.co](https://huggingface.co/models?pipeline_tag=text-generation&sort=downloads)
-- If there is a major change in the composition of python libraries, you must change the version of `CONDA_DIR` in `./Makefile`
