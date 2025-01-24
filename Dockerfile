@@ -2,8 +2,10 @@ FROM hardandheavy/transformers-rocm:2.4.0
 
 EXPOSE 80
 
-RUN git clone https://github.com/oobabooga/text-generation-webui.git /app 
-
+ENV TG_VERSION=2.3
+RUN git clone https://github.com/oobabooga/text-generation-webui.git /app && \
+    cd /app && \
+    git checkout v${TG_VERSION}
 WORKDIR /app
 RUN pip install -r requirements_cpu_only.txt
 
