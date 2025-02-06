@@ -1,4 +1,5 @@
 TG_DIR = $(PWD)/data/tg-webui
+CUR_VERSION = 2.5.0
 
 build:
 	docker build -t text-generation-webui-rocm:$(tag) .
@@ -13,7 +14,7 @@ seed:
 	if [ ! -f "$(TG_DIR)/tg-check-seed-file" ]; then \
 		docker run -it --rm \
 			-v $(TG_DIR):/tg-webui \
-			hardandheavy/text-generation-webui-rocm:latest sh -c \
+			hardandheavy/text-generation-webui-rocm:$(CUR_VERSION) sh -c \
 				"cp -r /app/* /tg-webui && \
 				touch /tg-webui/tg-check-seed-file"; fi
 
@@ -23,6 +24,5 @@ run: seed
 		--device=/dev/kfd \
 		--device=/dev/dri \
 		-v $(TG_DIR):/tg-webui \
-		-v ./data/cloudflared:/etc/cloudflared \
 		-w /tg-webui \
-		hardandheavy/text-generation-webui-rocm:latest
+		hardandheavy/text-generation-webui-rocm:$(CUR_VERSION)
