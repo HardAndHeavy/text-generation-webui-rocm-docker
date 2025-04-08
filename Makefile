@@ -1,5 +1,5 @@
 TG_DIR = $(PWD)/data/tg-webui
-CUR_VERSION = 2.5.0
+CUR_VERSION = 2.6.0
 
 build:
 	docker build -t text-generation-webui-rocm:$(tag) .
