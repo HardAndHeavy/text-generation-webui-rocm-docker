@@ -1,5 +1,5 @@
 TG_DIR = $(PWD)/data/tg-webui
-CUR_VERSION = 2.6.0
+CUR_VERSION = 2.6.1
 
 build:
 	docker build -t text-generation-webui-rocm:$(tag) .
@@ -17,6 +17,14 @@ seed:
 			hardandheavy/text-generation-webui-rocm:$(CUR_VERSION) sh -c \
 				"cp -r /app/* /tg-webui && \
 				touch /tg-webui/tg-check-seed-file"; fi
+bash: seed
+	docker run -it --rm \
+		-p 80:80 \
+		--device=/dev/kfd \
+		--device=/dev/dri \
+		-v $(TG_DIR):/tg-webui \
+		-w /tg-webui \
+		hardandheavy/text-generation-webui-rocm:$(CUR_VERSION) bash
 
 run: seed
 	docker run -it --rm \

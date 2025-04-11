@@ -2,7 +2,7 @@ FROM hardandheavy/transformers-rocm:2.6.0
 
 EXPOSE 80
 
-ENV TG_VERSION=2.6
+ENV TG_VERSION=2.7
 RUN git clone https://github.com/oobabooga/text-generation-webui.git /app && \
     cd /app && \
     git checkout v${TG_VERSION}
