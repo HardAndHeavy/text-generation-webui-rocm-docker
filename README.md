@@ -1,6 +1,6 @@
 # Text generation web UI on GPU AMD Radeon in Docker
 
-[Text generation web UI](https://github.com/oobabooga/text-generation-webui) in a [Docker container with GPU Radeon support](https://hub.docker.com/repository/docker/hardandheavy/text-generation-webui-rocm/general). Tested on AMD Radeon RX 7900 XTX.
+[Text generation web UI](https://github.com/oobabooga/text-generation-webui) in a [Docker container with GPU Radeon support](https://hub.docker.com/r/hardandheavy/text-generation-webui-rocm). Tested on AMD Radeon RX 7900 XTX.
 
 ### Requirements
 - Ubuntu
