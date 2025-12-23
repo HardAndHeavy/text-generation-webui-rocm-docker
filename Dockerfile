@@ -1,4 +1,4 @@
-FROM hardandheavy/transformers-rocm:2.11.0
+FROM hardandheavy/transformers-rocm:2.10.0
 
 ENV TG_VERSION=3.22
 RUN git clone https://github.com/oobabooga/text-generation-webui.git /app && \
