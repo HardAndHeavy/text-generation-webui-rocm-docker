@@ -1,5 +1,5 @@
 TG_DIR = $(PWD)/data/tg-webui
-CUR_VERSION = 2.12.1
+CUR_VERSION = 2.12.2
 CONDA_DIR = $(PWD)/data/miniconda_v$(CUR_VERSION)
 
 build:
